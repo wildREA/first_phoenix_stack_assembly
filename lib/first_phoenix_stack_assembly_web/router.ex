@@ -17,7 +17,7 @@ defmodule FirstPhoenixStackAssemblyWeb.Router do
   scope "/", FirstPhoenixStackAssemblyWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", StatisticsLive, :index
   end
 
   # Other scopes may use custom stacks.

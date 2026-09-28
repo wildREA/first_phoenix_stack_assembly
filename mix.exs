@@ -76,7 +76,11 @@ defmodule FirstPhoenixStackAssembly.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["compile", "tailwind first_phoenix_stack_assembly", "esbuild first_phoenix_stack_assembly"],
+      "assets.build": [
+        "compile",
+        "tailwind first_phoenix_stack_assembly",
+        "esbuild first_phoenix_stack_assembly"
+      ],
       "assets.deploy": [
         "tailwind first_phoenix_stack_assembly --minify",
         "esbuild first_phoenix_stack_assembly --minify",

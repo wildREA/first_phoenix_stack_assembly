@@ -9,7 +9,8 @@ defmodule FirstPhoenixStackAssembly.Application do
   def start(_type, _args) do
     children = [
       FirstPhoenixStackAssemblyWeb.Telemetry,
-      {DNSCluster, query: Application.get_env(:first_phoenix_stack_assembly, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:first_phoenix_stack_assembly, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: FirstPhoenixStackAssembly.PubSub},
       # Start a worker by calling: FirstPhoenixStackAssembly.Worker.start_link(arg)
       # {FirstPhoenixStackAssembly.Worker, arg},
